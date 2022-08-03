@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:onClick="saveBtn"
+        android:text="Сохранить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TimePicker
+        android:id="@+id/startTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toTopOf="@+id/endTimePicker"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TimePicker
+        android:id="@+id/endTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="1"
+        android:timePickerMode="spinner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Начало работы"
+        app:layout_constraintBottom_toBottomOf="@+id/startTimePicker"
+        app:layout_constraintEnd_toStartOf="@+id/startTimePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/startTimePicker" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Конец работы"
+        app:layout_constraintBottom_toBottomOf="@+id/endTimePicker"
+        app:layout_constraintEnd_toStartOf="@+id/endTimePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/endTimePicker" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endTimePicker">
+
+        <RadioButton
+            android:id="@+id/radio52"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:text="График 5/2"
+            android:textAlignment="center" />
+
+        <RadioButton
+            android:id="@+id/radio22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="makeDial"
+            android:text="График 2/2"
+            android:textAlignment="center" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
